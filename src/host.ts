@@ -2,7 +2,7 @@ import { englishMessage, type MessageFormatter } from "@magichourhq/browser-clie
 import type * as Asset from "@canva/asset";
 import type * as Design from "@canva/design";
 import type * as Platform from "@canva/platform";
-import { EditorInsertionError, videoPoster, type EditorHost } from "@magichourhq/design-video";
+import { EditorInsertionError, videoPoster, type EditorHost } from "@magichourhq/editor-kit";
 export type CanvaPort = {
   asset: Pick<typeof Asset, "upload" | "getTemporaryUrl">;
   design: Pick<typeof Design, "addElementAtPoint" | "addElementAtCursor" | "selection">;

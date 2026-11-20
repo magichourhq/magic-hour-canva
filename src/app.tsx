@@ -10,7 +10,7 @@ import {
   Alert,
 } from "@canva/app-ui-kit";
 import { englishMessage, type MessageFormatter } from "@magichourhq/browser-client";
-import type { VideoPanel, VideoOptions } from "@magichourhq/design-video";
+import type { VideoPanel, VideoOptions } from "@magichourhq/editor-kit";
 export function App({
   panel,
   openLink,

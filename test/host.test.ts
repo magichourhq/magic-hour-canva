@@ -1,6 +1,6 @@
 import { test } from "vitest";
 import assert from "node:assert/strict";
-import type { VideoResult } from "@magichourhq/design-video";
+import type { VideoResult } from "@magichourhq/editor-kit";
 import { canvaHost } from "../src/host";
 const result: VideoResult = {
   id: "existing-video",

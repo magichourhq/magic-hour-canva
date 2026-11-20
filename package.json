@@ -20,7 +20,7 @@
     "@canva/intents": "2.7.1",
     "@canva/platform": "2.2.3",
     "@magichourhq/browser-client": "^0.3.2",
-    "@magichourhq/design-video": "^0.1.0",
+    "@magichourhq/editor-kit": "^0.1.0",
     "mobx": "^6.16.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",

@@ -1,7 +1,7 @@
 import { build } from "esbuild";
 import { transform } from "@formatjs/unplugin/transform";
 import { messageCatalog as clientCatalog } from "@magichourhq/browser-client";
-import { messageCatalog as designVideoCatalog } from "@magichourhq/design-video";
+import { messageCatalog as editorKitCatalog } from "@magichourhq/editor-kit";
 import { execFileSync } from "node:child_process";
 import { mkdir, mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -58,7 +58,7 @@ execFileSync(
 const messages = {
   ...JSON.parse(await readFile(appMessages, "utf8")),
   ...clientCatalog(),
-  ...designVideoCatalog(),
+  ...editorKitCatalog(),
 };
 await writeFile("dist/messages_en.json", JSON.stringify(messages, null, 2) + "\n");
 // The Canva Developer Portal accepts one JS bundle. Inline its generated UI Kit CSS.

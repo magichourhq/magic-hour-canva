@@ -8,7 +8,7 @@ import { features, requestOpenExternalUrl } from "@canva/platform";
 import { prepareDesignEditor } from "@canva/intents/design";
 import { canvaHost } from "./host";
 import { App } from "./app";
-import { VideoPanel } from "@magichourhq/design-video";
+import { VideoPanel } from "@magichourhq/editor-kit";
 const intl = initIntl();
 prepareDesignEditor({
   render: () => {
