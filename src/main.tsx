@@ -8,7 +8,7 @@ import { features, requestOpenExternalUrl } from "@canva/platform";
 import { prepareDesignEditor } from "@canva/intents/design";
 import { canvaHost } from "./host";
 import { App } from "./app";
-import { VideoPanel } from "@magichourhq/editor-kit";
+import { DesignVideo } from "@magichourhq/editor-kit";
 const intl = initIntl();
 prepareDesignEditor({
   render: () => {
@@ -26,7 +26,7 @@ prepareDesignEditor({
       undefined,
       intl.formatMessage
     );
-    const panel = new VideoPanel(host, { formatMessage: intl.formatMessage });
+    const panel = new DesignVideo.VideoPanel(host, { formatMessage: intl.formatMessage });
     createRoot(document.getElementById("root")!).render(
       <AppI18nProvider>
         <AppUiProvider>

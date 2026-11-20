@@ -10,13 +10,13 @@ import {
   Alert,
 } from "@canva/app-ui-kit";
 import { englishMessage, type MessageFormatter } from "@magichourhq/browser-client";
-import type { VideoPanel, VideoOptions } from "@magichourhq/editor-kit";
+import type { DesignVideo } from "@magichourhq/editor-kit";
 export function App({
   panel,
   openLink,
   formatMessage = englishMessage,
 }: {
-  panel: VideoPanel;
+  panel: DesignVideo.VideoPanel;
   openLink: (url: string) => void;
   formatMessage?: MessageFormatter;
 }) {
@@ -24,8 +24,8 @@ export function App({
   const [key, setKey] = useState(""),
     [prompt, setPrompt] = useState(""),
     [duration, setDuration] = useState(5),
-    [resolution, setResolution] = useState<VideoOptions["resolution"]>("480p"),
-    [ratio, setRatio] = useState<VideoOptions["aspectRatio"]>("16:9"),
+    [resolution, setResolution] = useState<DesignVideo.VideoOptions["resolution"]>("480p"),
+    [ratio, setRatio] = useState<DesignVideo.VideoOptions["aspectRatio"]>("16:9"),
     [id, setId] = useState("");
   const [sourceUrl, setSourceUrl] = useState(""),
     [videoUrl, setVideoUrl] = useState("");

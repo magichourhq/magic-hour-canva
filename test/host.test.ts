@@ -1,8 +1,8 @@
 import { test } from "vitest";
 import assert from "node:assert/strict";
-import type { VideoResult } from "@magichourhq/editor-kit";
+import type { DesignVideo } from "@magichourhq/editor-kit";
 import { canvaHost } from "../src/host";
-const result: VideoResult = {
+const result: DesignVideo.VideoResult = {
   id: "existing-video",
   blob: new Blob(["video"], { type: "video/mp4" }),
   url: "https://media.example/video.mp4",

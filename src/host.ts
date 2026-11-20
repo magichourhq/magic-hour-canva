@@ -2,7 +2,7 @@ import { englishMessage, type MessageFormatter } from "@magichourhq/browser-clie
 import type * as Asset from "@canva/asset";
 import type * as Design from "@canva/design";
 import type * as Platform from "@canva/platform";
-import { EditorInsertionError, videoPoster, type EditorHost } from "@magichourhq/editor-kit";
+import { DesignVideo } from "@magichourhq/editor-kit";
 export type CanvaPort = {
   asset: Pick<typeof Asset, "upload" | "getTemporaryUrl">;
   design: Pick<typeof Design, "addElementAtPoint" | "addElementAtCursor" | "selection">;
@@ -10,11 +10,11 @@ export type CanvaPort = {
 };
 export function canvaHost(
   api: CanvaPort,
-  store: EditorHost["store"],
+  store: DesignVideo.EditorHost["store"],
   fetcher: typeof fetch = globalThis.fetch.bind(globalThis),
-  poster = (blob: Blob) => videoPoster(blob, formatMessage),
+  poster = (blob: Blob) => DesignVideo.videoPoster(blob, formatMessage),
   formatMessage: MessageFormatter = englishMessage
-): { host: EditorHost; dispose: () => void } {
+): { host: DesignVideo.EditorHost; dispose: () => void } {
   let selected: Design.SelectionEvent<"image"> | undefined;
   const unsubscribe = api.features.isSupported(api.design.selection.registerOnChange)
     ? api.design.selection.registerOnChange({
@@ -25,7 +25,7 @@ export function canvaHost(
       })
     : () => {};
   const uploaded = new Map<string, { preview?: Asset.ImageRef; video?: Asset.VideoRef }>();
-  const host: EditorHost = {
+  const host: DesignVideo.EditorHost = {
     name: "Canva",
     selectionLabel: formatMessage({
       defaultMessage: "Use selected image",
@@ -183,7 +183,7 @@ export function canvaHost(
               .replace(/(?:https?:\/\/|data:)[^\s"'<>)]*/gi, "[media URL]")
               .slice(0, 300);
           }
-          throw new EditorInsertionError(code, detail);
+          throw new DesignVideo.EditorInsertionError(code, detail);
         }
         throw error;
       }
